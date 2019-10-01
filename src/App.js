@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import "./App.css"
 import "emoji-mart/css/emoji-mart.css";
 import data from "emoji-mart/data/messenger.json";
 import { NimblePicker } from "emoji-mart";
@@ -64,6 +66,11 @@ export default class App extends Component {
     this.setState({ text: "" }); //reset the field to empty
   };
 
+  getValue = () => {
+    console.log(this.state.text);
+  }
+  
+
   render() {
     let { isClicked } = this.state;
     return (
@@ -101,6 +108,8 @@ export default class App extends Component {
               onClick={this.showBoxEmoji}
             />
           </span>
+          <br />
+          <button type="submit" onClick={this.getValue}>Submit</button>
         </form>
       </div>
     );
